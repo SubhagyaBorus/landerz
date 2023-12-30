@@ -43,9 +43,9 @@ class BlogsView extends StatelessWidget {
                 horizontal: MediaQuery.sizeOf(context).width * 1 / 11),
             height: sizingInformation.deviceScreenType ==
                     DeviceScreenType.desktop
-                ? 700
+                ? MediaQuery.sizeOf(context).height * 0.8
                 : sizingInformation.deviceScreenType == DeviceScreenType.tablet
-                    ? 1200
+                    ? MediaQuery.sizeOf(context).height * 1.7
                     : 1500,
             child: GridView.builder(
               physics: NeverScrollableScrollPhysics(),
