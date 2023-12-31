@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class NavigationBarItem extends StatelessWidget {
   final String title;
-  void Function()? onPressed;
+  final void Function()? onPressed;
 
   NavigationBarItem({super.key, required this.onPressed, required this.title});
 
@@ -14,7 +14,7 @@ class NavigationBarItem extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: TextStyle(fontSize: 15, letterSpacing: 2),
+          style: TextStyle(fontSize: 15, letterSpacing: 2, color: Colors.black),
         ),
       ),
     );

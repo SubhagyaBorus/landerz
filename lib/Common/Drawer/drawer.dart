@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:landerz/Common/Drawer/drawerItem.dart';
 
+import '../../config/Controller/OnTapController.dart';
+
 class drawer extends StatelessWidget {
+  final scroll = Get.put(OnTapController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,12 +19,36 @@ class drawer extends StatelessWidget {
           SizedBox(
             height: 100,
           ),
-          drawerItem(title: "Home", onTap: () {}),
-          drawerItem(title: "Features", onTap: () {}),
-          drawerItem(title: "About Us", onTap: () {}),
-          drawerItem(title: "Testimonials", onTap: () {}),
-          drawerItem(title: "Blogs", onTap: () {}),
-          drawerItem(title: "Contact", onTap: () {})
+          drawerItem(
+              title: "Home",
+              onTap: () {
+                scroll.scrollToHome();
+              }),
+          drawerItem(
+              title: "Features",
+              onTap: () {
+                scroll.scrollToFeatures();
+              }),
+          drawerItem(
+              title: "About Us",
+              onTap: () {
+                scroll.scrollToAbout();
+              }),
+          drawerItem(
+              title: "Testimonials",
+              onTap: () {
+                scroll.scrollToTesi();
+              }),
+          drawerItem(
+              title: "Blogs",
+              onTap: () {
+                scroll.scrollToBlogs();
+              }),
+          drawerItem(
+              title: "Contact",
+              onTap: () {
+                scroll.scrollToContact();
+              })
         ],
       ),
     );
